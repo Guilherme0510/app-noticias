@@ -11,6 +11,10 @@ const PORT = 5000
 app.use(cors());
   app.use(express.json())
 
+  app.get("/", (req, res) => {
+    res.send("Servidor está funcionando!");
+  });
+
 app.use("/api/noticias", newsRoutes);
 
 app.listen(PORT, () => console.log("Servidor na porta", PORT))
